@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a table at Lumina Coffee.">
+    <title>Lumina Coffee | Reservation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Lumina Coffee</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="booking.html" class="active">Reservation</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="form-container">
+                <h2>Table Reservation</h2>
+                <p>Please fill out the form below to secure your spot.</p>
+
+                <form action="#" method="POST" class="reservation-form">
+                    <input type="hidden" name="source" value="website">
+
+                    <fieldset>
+                        <legend>1. Personal Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name: <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="nguyen van a">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address: <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="nguyen van a@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number: <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" placeholder="0123456789">
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>2. Reservation Details</legend>
+
+                        <div class="form-group">
+                            <label for="branch">Select Branch:</label>
+                            <input list="branches" id="branch" name="branch" placeholder="Type or select a branch...">
+                            <datalist id="branches">
+                                <option value="District 1 - Main Street">
+                                <option value="District 3 - Lake View">
+                                <option value="District 7 - Riverside">
+                            </datalist>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date: <span class="required">*</span></label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Number of Guests:</label>
+                            <input type="number" id="guests" name="guests" min="1" max="20" value="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Seating Preference:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="seating" value="indoor" checked> Indoor</label>
+                                <label><input type="radio" name="seating" value="outdoor"> Outdoor (Patio)</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>3. Special Requests & Pre-order</legend>
+
+                        <div class="form-group">
+                            <label for="drink">Pre-order Signature Drink:</label>
+                            <select id="drink" name="drink">
+                                <option value="none">-- Select a drink --</option>
+                                <optgroup label="Coffee">
+                                    <option value="espresso">Classic Espresso</option>
+                                    <option value="latte">Caramel Latte</option>
+                                </optgroup>
+                                <optgroup label="Tea & Others">
+                                    <option value="matcha">Matcha Latte</option>
+                                    <option value="peach">Peach Tea</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sweetness">Sweetness Level: <span id="sweetValue">50%</span></label>
+                            <input type="range" id="sweetness" name="sweetness" min="0" max="100" step="25" value="50" oninput="document.getElementById('sweetValue').innerText = this.value + '%'">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Extra Services:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="services" value="highchair"> Need a baby high chair</label>
+                                <label><input type="checkbox" name="services" value="wheelchair"> Wheelchair accessible table</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="themeColor">Event Theme Color (If Party):</label>
+                            <input type="color" id="themeColor" name="themeColor" value="#6F4E37">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referenceImage">Upload Reference Image (Decor/Setup):</label>
+                            <input type="file" id="referenceImage" name="referenceImage" accept="image/png, image/jpeg">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Additional Notes:</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Any allergies or special requests?"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Confirm Booking</button>
+                        <input type="reset" class="btn btn-outline" value="Clear Form">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lumina Coffee. Assignment 1 by [Tran Duc Manh].</p>
+    </footer>
+
+</body>
+</html>
